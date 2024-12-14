@@ -7,12 +7,12 @@
 
 import Foundation
 import UIKit
-
 class NearbyFlowController {
-    
     private var navigationController: UINavigationController?
     
-    public init() {}
+    public init() {
+        
+    }
     
     func start() -> UINavigationController? {
         let contentView = SplashView()
@@ -22,11 +22,18 @@ class NearbyFlowController {
         return navigationController
     }
 }
-
 extension NearbyFlowController: SplashFlowDelegate {
     func decideNavigationFlow() {
         let contentView = WelcomeView()
         let welcomeViewController = WelcomeViewController(contentView: contentView)
+        welcomeViewController.flowDelegate = self
         navigationController?.pushViewController(welcomeViewController, animated: true)
+    }
+}
+
+extension NearbyFlowController: WelcomeFlowDelegate {
+    func goToHome() {
+        let homeViewController = HomeViewController()
+        navigationController?.pushViewController(homeViewController, animated: true)
     }
 }
