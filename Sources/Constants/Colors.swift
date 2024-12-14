@@ -2,7 +2,7 @@
 //  Colors.swift
 //  NearbyApp NLW
 //
-//  Created by Arthur Rios on 04/11/24.
+//  Created by user272882 on 12/11/24.
 //
 import Foundation
 import UIKit
